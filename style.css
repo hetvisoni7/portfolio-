@@ -961,18 +961,38 @@ section { padding: 100px 0; }
     .ocr-arrow-line { width: 24px; }
 
     /* Maze Demo */
-    .maze-demo { flex-direction: column; align-items: center; gap: 20px; }
-    .maze-grid { width: 100%; max-width: 340px; height: auto; aspect-ratio: 12/10; }
-    .maze-sidebar { flex-direction: row; gap: 12px; width: 100%; justify-content: center; }
-    .maze-controls { flex-direction: column; align-items: stretch; }
+    .maze-demo { flex-direction: column; align-items: center; gap: 20px; width: 100%; }
+    .maze-grid-wrapper { width: 100%; display: flex; justify-content: center; }
+    .maze-grid {
+        width: 100%;
+        max-width: 340px;
+        height: 260px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+    .maze-sidebar {
+        flex-direction: row;
+        gap: 16px;
+        width: 100%;
+        max-width: 340px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .maze-controls { flex-direction: column; align-items: stretch; width: 100%; max-width: 340px; }
 
     /* RL Demo */
-    .rl-demo { flex-direction: column; align-items: center; gap: 20px; }
-    .rl-viewport { width: 100%; max-width: 340px; }
-    .rl-grid { width: 100%; height: auto; aspect-ratio: 10/6; }
-    .rl-sidebar { flex-direction: row; gap: 12px; width: 100%; }
+    .rl-demo { flex-direction: column; align-items: center; gap: 20px; width: 100%; }
+    .rl-viewport { width: 100%; max-width: 340px; display: flex; justify-content: center; box-sizing: border-box; }
+    .rl-grid {
+        width: 100%;
+        max-width: 300px;
+        height: 180px;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    .rl-sidebar { flex-direction: row; gap: 12px; width: 100%; max-width: 340px; }
     .rl-sidebar > * { flex: 1; }
-    .rl-controls { flex-direction: column; align-items: stretch; }
+    .rl-controls { flex-direction: column; align-items: stretch; width: 100%; max-width: 340px; }
 
     /* Finance Demo */
     .fin-demo { flex-direction: column; align-items: center; gap: 20px; }
@@ -1028,6 +1048,8 @@ section { padding: 100px 0; }
     .ocr-handwritten-display { width: 180px; height: 80px; }
     .ocr-prediction-box { padding: 14px 18px; min-width: 100px; }
     .ocr-pred-char { font-size: 1.8rem; }
+    .maze-grid { max-width: 290px; height: 230px; }
+    .rl-grid { max-width: 260px; height: 150px; }
     .maze-controls, .rl-controls { gap: 8px; }
     .btn-sm { font-size: 0.72rem; padding: 7px 14px; }
     .select-sm { font-size: 0.72rem; padding: 7px 12px; }
