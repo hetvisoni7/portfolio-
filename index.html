@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hetvi Soni — AI Engineer</title>
+    <meta name="description" content="Hetvi Soni — AI Engineer building intelligent systems from research to production. Computer vision, reinforcement learning, LLM applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Chat Button -->
+    <button id="chat-fab" class="chat-fab" aria-label="Open AI Assistant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">hetvi soni</a>
+            <div class="nav-links">
+                <a href="#work">work</a>
+                <a href="#about">about</a>
+                <a href="#skills">skills</a>
+                <a href="#contact">contact</a>
+            </div>
+            <button class="nav-chat-btn" id="nav-chat-btn">ask ai twin →</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero-label">AI ENGINEER · AHMEDABAD</div>
+            <h1 class="hero-title">
+                Crafting intelligent systems<br>
+                <span class="hero-accent">from research to production</span>
+            </h1>
+            <p class="hero-sub">
+                I build full-stack AI applications — computer vision pipelines, reinforcement learning agents, and LLM-powered products. Five shipped projects, seven search algorithms benchmarked, one PPO agent trained from scratch.
+            </p>
+            <div class="hero-metrics">
+                <div class="metric">
+                    <span class="metric-num">5</span>
+                    <span class="metric-label">shipped projects</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-num">96%+</span>
+                    <span class="metric-label">OCR accuracy</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-num">7</span>
+                    <span class="metric-label">search algorithms</span>
+                </div>
+            </div>
+            <div class="hero-scroll-hint">
+                <span>scroll to explore</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
+        </section>
+
+        <!-- Projects / Work -->
+        <section class="work" id="work">
+            <div class="section-label">SELECTED WORK</div>
+            <h2 class="section-heading">Projects</h2>
+
+            <!-- Project 1: Handwriting Recognition -->
+            <article class="project-card" id="proj-ocr">
+                <div class="project-visual">
+                    <div class="ocr-demo">
+                        <div class="ocr-canvas-area">
+                            <div class="ocr-label-tag">detected: handwriting</div>
+                            <div class="ocr-handwritten-display">
+                                <!-- Static SVG handwritten "hello" -->
+                                <svg viewBox="0 0 320 120" class="ocr-hello-svg" fill="none" stroke="var(--accent-sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <!-- h -->
+                                    <path d="M30 20 L30 95" />
+                                    <path d="M30 55 Q45 35 55 45 Q65 55 60 95" />
+                                    <!-- e -->
+                                    <path d="M75 60 Q95 50 100 60 Q105 72 95 80 Q82 88 75 78" />
+                                    <!-- l -->
+                                    <path d="M115 20 L118 95" />
+                                    <!-- l -->
+                                    <path d="M135 20 L138 95" />
+                                    <!-- o -->
+                                    <path d="M160 65 Q160 48 175 48 Q192 48 192 65 Q192 85 175 85 Q160 85 160 65" />
+                                </svg>
+                            </div>
+                            <div class="ocr-dashed-border"></div>
+                        </div>
+                        <div class="ocr-arrow">
+                            <div class="ocr-arrow-line"></div>
+                            <div class="ocr-arrow-head">▶</div>
+                        </div>
+                        <div class="ocr-prediction-box">
+                            <div class="ocr-pred-title">PREDICTION</div>
+                            <div class="ocr-pred-divider"></div>
+                            <div class="ocr-pred-char">Hello</div>
+                            <div class="ocr-pred-conf">conf: 97.2%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>Django</span><span>TrOCR</span><span>EMNIST</span><span>Computer Vision</span><span>CNN</span>
+                    </div>
+                    <h3 class="project-title">Handwriting Recognition System</h3>
+                    <p class="project-desc">Fine-tuned TrOCR on a 25,000-image Kaggle dataset (IMA) and designed a custom preprocessing step to improve recognition on irregular, messy handwriting, achieving 96%+ accuracy. Deployed the trained model in-house through a Django web app for real-time predictions, with no external OCR API used.</p>
+                </div>
+            </article>
+
+            <!-- Project 2: Maze Solver & Pathfinding Visualizer -->
+            <article class="project-card" id="proj-maze">
+                <div class="project-visual">
+                    <div class="maze-demo">
+                        <div class="maze-grid-wrapper">
+                            <div class="maze-grid" id="maze-grid"></div>
+                        </div>
+                        <div class="maze-sidebar">
+                            <div class="maze-legend">
+                                <div class="legend-title">Algorithm</div>
+                                <div class="legend-item"><span class="legend-swatch swatch-path"></span> A* path</div>
+                                <div class="legend-item"><span class="legend-swatch swatch-wall"></span> Walls</div>
+                                <div class="legend-item"><span class="legend-swatch swatch-explored"></span> Explored</div>
+                            </div>
+                            <div class="maze-stats-box">
+                                <div class="maze-stat">steps: <strong id="maze-steps">—</strong></div>
+                                <div class="maze-stat">cost: <strong id="maze-cost">—</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="maze-controls">
+                        <select id="maze-algo" class="select-sm">
+                            <option value="AStar">A* Search</option>
+                            <option value="BFS">BFS</option>
+                            <option value="DFS">DFS</option>
+                            <option value="HillClimbing">Hill Climbing</option>
+                            <option value="SimulatedAnnealing">Simulated Annealing</option>
+                        </select>
+                        <button class="btn-sm" id="maze-randomize">randomize</button>
+                        <button class="btn-sm btn-accent" id="maze-solve">solve →</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>Python</span><span>Search Algorithms</span>
+                    </div>
+                    <h3 class="project-title">Maze Solver & Pathfinding Visualizer</h3>
+                    <p class="project-desc">Implemented and compared seven algorithms — BFS, DFS, DB-DFS, Hill Climbing, Iterative Hill Climbing, Random Walk, and Simulated Annealing. Extended the approach using A* and Dijkstra's algorithm on a real map of India to compute optimal routes between user-selected points.</p>
+                </div>
+            </article>
+
+            <!-- Project 3: RL Agent -->
+            <article class="project-card" id="proj-rl">
+                <div class="project-visual">
+                    <div class="rl-demo">
+                        <div class="rl-viewport">
+                            <div class="rl-grid" id="rl-grid"></div>
+                        </div>
+                        <div class="rl-sidebar">
+                            <div class="rl-hud">
+                                <div class="rl-hud-row">epoch <strong id="rl-epoch">0</strong>/50</div>
+                                <div class="rl-hud-row">reward <strong id="rl-reward">—</strong></div>
+                                <div class="rl-hud-row">success <strong id="rl-success">0%</strong></div>
+                            </div>
+                            <div class="rl-chart-wrap">
+                                <svg viewBox="0 0 160 50" class="rl-chart" id="rl-chart">
+                                    <polyline points="" fill="none" stroke="var(--accent-sage)" stroke-width="1.5" id="rl-chart-line"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rl-controls">
+                        <div class="rl-slider-group">
+                            <label>goal: <strong id="rl-goal-val">+100</strong></label>
+                            <input type="range" id="rl-goal" min="20" max="200" value="100">
+                        </div>
+                        <div class="rl-slider-group">
+                            <label>enemy: <strong id="rl-enemy-val">-50</strong></label>
+                            <input type="range" id="rl-enemy" min="-100" max="-10" value="-50">
+                        </div>
+                        <button class="btn-sm btn-accent" id="rl-train">train agent →</button>
+                        <button class="btn-sm" id="rl-reset">reset</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>PPO</span><span>Reward Engineering</span><span>Reinforcement Learning</span>
+                    </div>
+                    <h3 class="project-title">RL Agent for 3D Maze Navigation</h3>
+                    <p class="project-desc">Designed a custom reward function and trained a PPO-based agent to navigate a 3D maze, avoiding enemies and breaking through walls. Structured training across multiple epochs, enabling the agent to learn navigation purely through trial and error with no hardcoded logic.</p>
+                </div>
+            </article>
+
+            <!-- Project 4: Finance Dashboard -->
+            <article class="project-card" id="proj-finance">
+                <div class="project-visual">
+                    <div class="fin-demo">
+                        <div class="fin-bars">
+                            <div class="fin-bar-group">
+                                <div class="fin-bar" id="fin-bar-rent" style="height:60%"></div>
+                                <span class="fin-bar-label">Rent</span>
+                            </div>
+                            <div class="fin-bar-group">
+                                <div class="fin-bar bar-food" id="fin-bar-food" style="height:42%"></div>
+                                <span class="fin-bar-label">Food</span>
+                            </div>
+                            <div class="fin-bar-group">
+                                <div class="fin-bar bar-fun" id="fin-bar-fun" style="height:30%"></div>
+                                <span class="fin-bar-label">Fun</span>
+                            </div>
+                            <div class="fin-bar-group">
+                                <div class="fin-bar bar-transit" id="fin-bar-transit" style="height:18%"></div>
+                                <span class="fin-bar-label">Transit</span>
+                            </div>
+                        </div>
+                        <div class="fin-sidebar">
+                            <div class="fin-metric-card">
+                                <div class="fin-metric-label">balance</div>
+                                <div class="fin-metric-val" id="fin-balance">$4,850</div>
+                            </div>
+                            <div class="fin-metric-card">
+                                <div class="fin-metric-label">savings</div>
+                                <div class="fin-metric-val fin-green" id="fin-savings">$1,200</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-scenarios">
+                        <button class="scenario-btn" data-scenario="food">what if I cut dining by 50%?</button>
+                        <button class="scenario-btn" data-scenario="rent">what if I split rent?</button>
+                        <button class="scenario-btn" data-scenario="laptop">can I buy a $1200 laptop?</button>
+                    </div>
+                    <div class="fin-response hidden" id="fin-response">
+                        <span class="fin-ai-tag">AI</span>
+                        <p id="fin-response-text"></p>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>React</span><span>Django</span><span>LLM Chatbot</span>
+                    </div>
+                    <h3 class="project-title">AI-Powered Finance Dashboard</h3>
+                    <p class="project-desc">Built a dashboard that syncs bank transactions and displays real-time savings, spending trends, and auto-categorized expenses. Integrated an LLM chatbot to answer natural-language financial "what-if" questions using the user's own transaction data.</p>
+                </div>
+            </article>
+
+            <!-- Project 5: NutriAI -->
+            <article class="project-card" id="proj-nutri">
+                <div class="project-visual">
+                    <div class="nutri-demo">
+                        <div class="nutri-form-area">
+                            <div class="nutri-row">
+                                <select id="nutri-cuisine" class="select-sm">
+                                    <option value="gujarati">Gujarati — Paneer Tikka</option>
+                                    <option value="italian">Italian — Margherita Pasta</option>
+                                    <option value="mexican">Mexican — Bean Enchiladas</option>
+                                </select>
+                                <div class="nutri-people-control">
+                                    <span>×</span>
+                                    <strong id="nutri-count">4</strong>
+                                    <span>people</span>
+                                    <input type="range" id="nutri-slider" min="1" max="12" value="4">
+                                </div>
+                            </div>
+                            <button class="btn-sm btn-accent" id="nutri-generate">generate recipe →</button>
+                        </div>
+                        <div class="nutri-output hidden" id="nutri-output">
+                            <h4 id="nutri-title"></h4>
+                            <div class="nutri-cols">
+                                <ul id="nutri-ingredients"></ul>
+                                <ol id="nutri-steps"></ol>
+                            </div>
+                            <div class="nutri-footnote">⚙ scaled via offline rule logic · 0.04ms</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>PHP</span><span>HTML/CSS</span><span>Rule-based</span>
+                    </div>
+                    <h3 class="project-title">NutriAI — Recipe & Diet Planner</h3>
+                    <p class="project-desc">Designed a rule-based recipe suggestion chatbot and cuisine-based meal planner that calculates ingredient quantities by number of people, without using AI/ML.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="section-label">BACKGROUND</div>
+            <h2 class="section-heading">About</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>AI Engineering student (MSc AI) with experience building full-stack AI applications — from data preprocessing and model training to deployment. Comfortable working across Python, frameworks, and LLM APIs, with practical experience in computer vision, reinforcement learning, and search algorithms.</p>
+                </div>
+                <div class="about-education">
+                    <div class="edu-card">
+                        <div class="edu-degree">MSc Artificial Intelligence</div>
+                        <div class="edu-school">St. Xavier's College</div>
+                        <div class="edu-meta">CGPA 7.89 · Expected 2027</div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-degree">BCA</div>
+                        <div class="edu-school">Indus University</div>
+                        <div class="edu-meta">CGPA 8.80</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-achievements">
+                <div class="achievement-card">
+                    <div class="ach-year">2026</div>
+                    <div class="ach-body">
+                        <h4>UIDAI Data Hackathon</h4>
+                        <p>National hackathon by the Unique Identification Authority of India (with NIC & MeitY). Analyzed anonymized Aadhaar enrolment/update datasets to identify data-quality patterns and submitted a research-based insights report.</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="ach-year">2025</div>
+                    <div class="ach-body">
+                        <h4>Open-Source Portfolio</h4>
+                        <p>Built and self-hosted a personal portfolio site showcasing all projects with live demos. Maintains all project code publicly on GitHub.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-row">
+                <div class="cert-pill">Introduction to Machine Learning · Kaggle</div>
+                <div class="cert-pill">Feature Engineering · Kaggle</div>
+                <div class="cert-pill">Data Cleaning · Kaggle</div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills" id="skills">
+            <div class="section-label">CAPABILITIES</div>
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-clusters">
+                <div class="skill-cluster">
+                    <div class="cluster-label">AI / ML</div>
+                    <div class="cluster-items">
+                        <span>Machine Learning</span>
+                        <span>Deep Learning</span>
+                        <span>Computer Vision</span>
+                        <span>NLP</span>
+                        <span>Reinforcement Learning (PPO)</span>
+                        <span>Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-cluster">
+                    <div class="cluster-label">LLM Tools</div>
+                    <div class="cluster-items">
+                        <span>OpenAI API</span>
+                        <span>Claude</span>
+                        <span>Gemini</span>
+                        <span>RAG</span>
+                    </div>
+                </div>
+                <div class="skill-cluster">
+                    <div class="cluster-label">Full-Stack</div>
+                    <div class="cluster-items">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>React</span>
+                        <span>HTML / CSS / JS</span>
+                    </div>
+                </div>
+                <div class="skill-cluster">
+                    <div class="cluster-label">Databases</div>
+                    <div class="cluster-items">
+                        <span>Supabase</span>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="section-label">GET IN TOUCH</div>
+            <h2 class="section-heading">Contact</h2>
+            <div class="contact-grid">
+                <a href="mailto:hetvisoni40@gmail.com" class="contact-item">
+                    <span class="contact-type">email</span>
+                    <span class="contact-val">hetvisoni40@gmail.com</span>
+                </a>
+                <div class="contact-item">
+                    <span class="contact-type">phone</span>
+                    <span class="contact-val">7801999285</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-type">location</span>
+                    <span class="contact-val">Ahmedabad, India</span>
+                </div>
+            </div>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/soni-hetvi-484516283/" target="_blank" class="contact-link">LinkedIn ↗</a>
+                <a href="https://github.com/HetviSoni" target="_blank" class="contact-link">GitHub ↗</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Hetvi Soni</p>
+        </footer>
+    </main>
+
+    <!-- Chat Overlay -->
+    <div id="chat-overlay" class="chat-overlay">
+        <div class="chat-panel">
+            <div class="chat-head">
+                <div class="chat-head-left">
+                    <span class="chat-dot"></span>
+                    <div>
+                        <strong>Hetvi's AI Twin</strong>
+                        <span class="chat-status">online · resume-grounded</span>
+                    </div>
+                </div>
+                <button id="chat-close" class="chat-close-btn">✕</button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg msg-bot">
+                    <div class="msg-bubble">Hi! I'm Hetvi's AI Twin — ask me anything about her skills, projects, education, or background. I only answer from her resume data.</div>
+                </div>
+            </div>
+            <div class="chat-chips">
+                <button class="chip" data-q="Who is Hetvi?">who is hetvi?</button>
+                <button class="chip" data-q="Show me her projects">projects</button>
+                <button class="chip" data-q="What are her skills?">skills</button>
+                <button class="chip" data-q="Tell me about the UIDAI hackathon">hackathon</button>
+                <button class="chip" data-q="How can I contact her?">contact</button>
+            </div>
+            <form class="chat-input-bar" id="chat-form">
+                <input type="text" id="chat-input" placeholder="ask about skills, projects, education..." autocomplete="off">
+                <button type="submit" class="chat-send">→</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="bot.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
