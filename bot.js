@@ -13,15 +13,52 @@ document.addEventListener('DOMContentLoaded', () => {
     function openChat() {
         overlay.classList.add('open');
         input.focus();
+        document.body.style.overflow = 'hidden'; // Prevent body scroll
     }
     function closeChat() {
         overlay.classList.remove('open');
+        document.body.style.overflow = ''; // Restore body scroll
     }
 
     document.getElementById('chat-fab').addEventListener('click', openChat);
-    document.getElementById('nav-chat-btn').addEventListener('click', openChat);
+    
+    // Bind both desktop and mobile nav chat buttons
+    const chatBtnD = document.getElementById('nav-chat-btn');
+    const chatBtnM = document.getElementById('nav-chat-btn-mobile');
+    if (chatBtnD) chatBtnD.addEventListener('click', openChat);
+    if (chatBtnM) chatBtnM.addEventListener('click', () => {
+        closeMobileMenu();
+        openChat();
+    });
+
     document.getElementById('chat-close').addEventListener('click', closeChat);
     window.addEventListener('keydown', e => { if (e.key === 'Escape') closeChat(); });
+
+    // Mobile menu toggle logic
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('nav-toggle');
+    
+    function toggleMobileMenu() {
+        nav.classList.toggle('nav-open');
+        if (nav.classList.contains('nav-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    function closeMobileMenu() {
+        nav.classList.remove('nav-open');
+        document.body.style.overflow = '';
+    }
+
+    if (navToggle) navToggle.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when clicking navigation links
+    const navLinks = document.querySelectorAll('#nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
 
     // Suggestion chips
     document.querySelectorAll('.chip').forEach(chip => {
