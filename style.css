@@ -309,12 +309,12 @@ section { padding: 100px 0; }
 .maze-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 3px; width: 360px; height: 300px;
+    gap: 3px; width: 100%; max-width: 360px;
 }
 .maze-cell {
     background: white; border-radius: 3px; cursor: pointer;
     transition: background-color 0.15s ease; position: relative;
+    aspect-ratio: 1 / 1; min-height: 16px;
 }
 .maze-cell.wall { background: #6B6B6B; }
 .maze-cell.start {
@@ -402,12 +402,11 @@ section { padding: 100px 0; }
 .rl-grid {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 3px; width: 320px; height: 192px;
+    gap: 3px; width: 100%; max-width: 320px;
 }
 .rl-cell {
     background: rgba(255,255,255,0.04); border-radius: 2px;
-    position: relative;
+    position: relative; aspect-ratio: 1 / 1; min-height: 18px;
 }
 .rl-cell.wall { background: #334155; }
 .rl-cell.enemy {
@@ -966,9 +965,6 @@ section { padding: 100px 0; }
     .maze-grid {
         width: 100%;
         max-width: 340px;
-        height: 260px;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(10, 1fr);
     }
     .maze-sidebar {
         flex-direction: row;
@@ -986,9 +982,6 @@ section { padding: 100px 0; }
     .rl-grid {
         width: 100%;
         max-width: 300px;
-        height: 180px;
-        grid-template-columns: repeat(10, 1fr);
-        grid-template-rows: repeat(6, 1fr);
     }
     .rl-sidebar { flex-direction: row; gap: 12px; width: 100%; max-width: 340px; }
     .rl-sidebar > * { flex: 1; }
@@ -1048,8 +1041,8 @@ section { padding: 100px 0; }
     .ocr-handwritten-display { width: 180px; height: 80px; }
     .ocr-prediction-box { padding: 14px 18px; min-width: 100px; }
     .ocr-pred-char { font-size: 1.8rem; }
-    .maze-grid { max-width: 290px; height: 230px; }
-    .rl-grid { max-width: 260px; height: 150px; }
+    .maze-grid { max-width: 290px; }
+    .rl-grid { max-width: 260px; }
     .maze-controls, .rl-controls { gap: 8px; }
     .btn-sm { font-size: 0.72rem; padding: 7px 14px; }
     .select-sm { font-size: 0.72rem; padding: 7px 12px; }
