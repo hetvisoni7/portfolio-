@@ -292,13 +292,13 @@ function initRLWidget() {
             points += `${x},${y} `;
             document.getElementById('rl-chart-line').setAttribute('points', points);
 
-            // Animate agent
+            // Animate agent in 3D
             let si = 0;
             let walkT = setInterval(() => {
                 if (si < path.length) { agentPos = path[si]; drawRLGrid(); si++; }
                 else clearInterval(walkT);
-            }, 60);
-        }, 1500);
+            }, 110);
+        }, 1800);
     });
 
     function getAgentPath(epoch, map) {
